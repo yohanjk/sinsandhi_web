@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>SinSandhi Tool - NLPC</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mainpage.css') }}">
+    <style>
+
+    </style>
+</head>
+<body>
+
+<div class="content-body">
+    <div class="content">
+        <h1>SinSandhi Tool</h1>
+        <p>Sinhala word joining and splitting tool based on Sandhi Rules</p>
+        <p>සිංහල වචන සන්ධි සහ විසන්ධි කිරීමේ මෙවලම</p>
+        <a class="btn btn-primary btn-sm" href="/word_joiner">Word Joiner</a>
+        <a class="btn btn-primary btn-sm" href="/word_splitter">Word Splitter</a>
+    </div>
+    <hr>
+    <div class="content middle-content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <div class="page-footer font-small teal pt-4">
+        <hr>
+        <div class="container-fluid text-center text-md-left">
+
+
+            <div class="row" style="bottom: 0;">
+
+
+                <div class="col-md-4 mt-md-0 mt-3 ft-1">
+                    <img src="{{ url_for('static', filename='images/University_of_Moratuwa_logo.png') }}" ,
+                         height="80px">
+                </div>
+                <div class="col-md-4 mb-md-0 mb-3 ft-2">
+                    <img src="{{ url_for('static', filename='images/NLPC_logo.png') }}" class="logo" height="50px">
+                </div>
+                <div class="col-md-4 mb-md-0 mb-3 ft-3">
+                    <div class="github-txt">
+                        <p style="margin-bottom: 0;">Contribute on Github</p>
+                        <a href="https://github.com/yohanjk/sinsandhi" class="text-center">
+                            <img src="{{ url_for('static', filename='images/GitHub-Mark.png') }}" , height="50px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

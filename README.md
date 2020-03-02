@@ -1,0 +1,1 @@
+Flask based web interface for the [SinSandhi](https://github.com/yohanjk/sinsandhi) tool.

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Word Joiner | වචන සන්ධිකරන්න </h3>
+    <br>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag }}
+        <p>
+            {{ form.word1.label }}
+            {{ form.word1(size=32) }}<br>
+            {% for error in form.word1.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.word2.label }}
+            {{ form.word2(size=32) }}<br>
+            {% for error in form.word2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }} <input type="button" onclick="window.location.href = '/word_joiner';" value="Reset"></p>
+    </form>
+    {% if response %}
+        <div>
+            <h3>Results</h3>
+            <p>Best: {{response['best']}}</p>
+            <p>All Outputs:</p>
+            <table border="1">
+                <tr>
+                    <td>Word</td>
+                    <td>Score</td>
+                </tr>
+                {% for key, value in response['output'].items() %}
+                    <tr>
+                        <td>{{key}}</td>
+                        <td>{{value}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% endif %}
+{% endblock %}
