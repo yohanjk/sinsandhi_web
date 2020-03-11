@@ -4,14 +4,14 @@ from app.forms import WordJoinerForm, WordSplitterForm
 
 from sinsandhi import SandhiTool
 
-freq_dic_path = '/home/cse/Projects/Extra/sinsandhi/data/word_freq_dic.pickle'
+freq_dic_path = '/data/freq_dic_v2.txt'
 stool = SandhiTool(freq_dic_path)
 
 
 @app.route('/')
 @app.route('/index')
 def index():
-    return redirect('/word_joiner')
+    return redirect('http://nlp-tools.uom.lk/sinsandhi/word_joiner')
 
 
 @app.route('/word_joiner', methods=['GET', 'POST'])
